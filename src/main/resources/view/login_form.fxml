@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootNode" prefHeight="739.0" prefWidth="1240.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.tailorshop.controller.LoginFormController">
+   <children>
+      <ImageView fitHeight="739.0" fitWidth="1209.0" layoutX="29.0" pickOnBounds="true" preserveRatio="true" scaleX="1.05">
+         <image>
+            <Image url="@../asserts/icon/background.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="465.0" fitWidth="487.0" layoutX="139.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true" scaleX="1.6" scaleY="1.6">
+         <image>
+            <Image url="@../asserts/icon/original-1c39c46cf41b6d606742f520ba607679-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="851.0" layoutY="36.0" prefHeight="46.0" prefWidth="307.0" text="       WELCOME!" textFill="#2e2f30">
+         <font>
+            <Font name="Calibri Bold" size="37.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtusername" layoutX="796.0" layoutY="238.0" prefHeight="51.0" prefWidth="410.0" promptText="Type your username">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="796.0" layoutY="452.0" onAction="#btnLoginOnAction" prefHeight="46.0" prefWidth="410.0" style="-fx-background-color: #00B4D8;" text="LOGIN" textFill="#1e2123">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <effect>
+            <Shadow>
+               <color>
+                  <Color red="0.9052631855010986" green="0.8918518424034119" blue="0.8918518424034119" />
+               </color>
+            </Shadow>
+         </effect>
+      </JFXButton>
+      <Label layoutX="796.0" layoutY="203.0" prefHeight="27.0" prefWidth="102.0" text="Username" textFill="#262828">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="796.0" layoutY="308.0" prefHeight="27.0" prefWidth="102.0" text="Password" textFill="#1f2020">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <PasswordField fx:id="pw" layoutX="796.0" layoutY="344.0" prefHeight="51.0" prefWidth="410.0" promptText="Type your password">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </PasswordField>
+      <ImageView fitHeight="155.0" fitWidth="161.0" layoutX="748.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts/icon/tailorfinallogo.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootNode" prefHeight="739.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.tailorshop.controller.DashboardFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="739.0" layoutX="-1.0" stroke="BLACK" strokeType="INSIDE" width="1240.0" />
+      <ImageView fitHeight="430.0" fitWidth="686.0" layoutX="279.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true" scaleX="1.8" scaleY="1.72">
+         <image>
+            <Image url="@../asserts/icon/background.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="495.0" fitWidth="764.0" layoutX="161.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts/icon/tailor-with-sewing-cloth-pincushion-threads-fashion-designer-seamstress-scissors-and-measuring-to-make-clothes-in-flat-background-illustration-vector-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="986.0" layoutY="191.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #9BCAE9; -fx-background-radius: 30;">
+         <children>
+            <Label layoutX="33.0" layoutY="111.0" prefHeight="40.0" prefWidth="134.0" text="  Customer " textFill="#1b1a1a">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblCustomerCount" layoutX="88.0" layoutY="46.0" text="51" textFill="#1b1a1a">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="62.0" layoutY="151.0" prefHeight="35.0" prefWidth="90.0" text="Count">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="14.0" layoutY="108.0" prefHeight="82.0" prefWidth="398.0" text="WELCOME HOME!" textFill="#2f3030">
+         <font>
+            <Font name="Calibri Bold" size="48.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="986.0" layoutY="414.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #48CAE4; -fx-background-radius: 30;">
+         <children>
+            <Label layoutX="53.0" layoutY="115.0" style="-fx-background-color: #48CAE4;" text="Garments " textFill="#202020">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblGarmentCount" layoutX="80.0" layoutY="53.0" text="20" textFill="#202020">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="68.0" layoutY="149.0" prefHeight="35.0" prefWidth="90.0" text="Count">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a9c6d9" height="88.0" layoutX="1.0" stroke="#343536" strokeType="INSIDE" width="1242.0" />
+      <JFXButton fx:id="btnEmployee" buttonType="RAISED" layoutX="368.0" layoutY="25.0" onAction="#btnEmployeeOnAction" prefHeight="52.0" prefWidth="166.0" style="-fx-background-radius: 30;" text="Employees">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="54.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-portfolio-80.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnCustomer" buttonType="RAISED" layoutX="198.0" layoutY="25.0" onAction="#btnCustomerOnAction" prefHeight="51.0" prefWidth="157.0" style="-fx-background-radius: 30;" text="Customers">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="38.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-customer-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnMeasurement" buttonType="RAISED" layoutX="521.0" layoutY="28.0" onAction="#btnMeasurementOnAction" prefHeight="50.0" prefWidth="198.0" style="-fx-background-radius: 30;" text="Measurements">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="46.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-sewing-tape-measure-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnMaterial" buttonType="RAISED" layoutX="719.0" layoutY="27.0" onAction="#btnMaterialOnAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-radius: 30;" text="Materials">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-embroidery-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </JFXButton>
+      <JFXButton fx:id="btnGarment" buttonType="RAISED" layoutX="866.0" layoutY="30.0" onAction="#btnGarmentOnAction" prefHeight="46.0" prefWidth="151.0" style="-fx-background-radius: 30;" text="Garments">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-dress-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="1024.0" layoutY="28.0" onAction="#btnOrderOnAction" prefHeight="50.0" prefWidth="124.0" style="-fx-background-radius: 30;" text="Orders">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="77.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-order-80.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="1156.0" layoutY="33.0" onAction="#btnExitOnAction" style="-fx-background-radius: 30;" text="Exit">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-exit-50.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="88.0" fitWidth="102.0" layoutX="-4.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts/icon/tailorfinallogo-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnHome" buttonType="RAISED" layoutX="83.0" layoutY="24.0" onAction="#btnHomeOnAction" prefHeight="53.0" prefWidth="116.0" style="-fx-background-radius: 30; -fx-border-radius: 30;" stylesheets="@../Style/buttonStyle.css" text="Home">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Shadow />
+         </effect>
+         <graphic>
+            <ImageView fitHeight="32.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icon/icons8-home-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>
