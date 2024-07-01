@@ -5,58 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd485318-7def-4c0f-9aad-7f4c40ab2422" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/Launcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/LauncherWrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/LoginFormController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/db/DbConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Report/CustomerDetailReport.jrxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Report/GarmentsDetailReport.jrxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Report/MaterialReport.jrxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Report/MeasurementReport.jrxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Report/OrderDetailReport.jrxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Report/finalBill.jrxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Style/buttonStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/61Xd5YZVY+L._AC_UF894,1000_QL80_.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/icons8-add-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/icons8-amazon-pay-32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/icons8-back-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/icons8-cart-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/icons8-clear-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/icons8-customer-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/icons8-delete-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/icons8-dress-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/icons8-embroidery-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/icons8-exit-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/icons8-home-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/icons8-order-80.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/icons8-portfolio-80.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/icons8-report-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/icons8-save-64.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/icons8-search-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/icons8-sewing-tape-measure-64.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/icons8-update-64.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/loginnew.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/newlogotailor.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/original-1c39c46cf41b6d606742f520ba607679-removebg-preview.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/registerNew1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/tailor-with-sewing-cloth-pincushion-threads-fashion-designer-seamstress-scissors-and-measuring-to-make-clothes-in-flat-background-illustration-vector-removebg-preview.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/tailorfinallogo-removebg-preview.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icon/tailorfinallogo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/customer_form.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dashboard_form.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/employee_form.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/garment_form.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/login_form.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/material_form.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/measurement_form.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/order_form.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/payment_form.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/bo/BOFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/bo/SuperBO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/bo/custom/CustomerBO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/bo/custom/Impl/CustomerBOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/CustomerFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/controller/EmployeeFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/dao/CrudDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/dao/DAOFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/dao/SuperDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/dao/custom/CustomerDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/dao/custom/Impl/CustomerDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/dto/CustomerDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/entity/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/util/Regex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/util/SQLUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/util/TextField.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/view/tdm/CustomerTm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/db/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/tailorshop/db/DbConnection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +33,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -82,28 +50,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Launcher.executor": "Run",
-    "Application.LauncherWrapper.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/DELL/Documents/tailorshop-layered/src/main/java/lk/ijse/tailorshop",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Launcher.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LauncherWrapper.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/DELL/Documents/tailorshop-layered/src/main/java/lk/ijse/tailorshop&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\DELL\Documents\tailorshop-layered\src\main\java\lk\ijse\tailorshop" />
       <recent name="C:\Users\DELL\Documents\tailorshop-layered\src\main\resources\asserts\icon" />
       <recent name="C:\Users\DELL\Documents\tailorshop-layered\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="lk.ijse.tailorshop.entity" />
+      <recent name="lk.ijse.tailorshop.view.tdm" />
+      <recent name="lk.ijse.tailorshop.model" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -115,7 +88,8 @@
       <option name="presentableId" value="Default" />
       <updated>1719736416790</updated>
       <workItem from="1719736417619" duration="1083000" />
-      <workItem from="1719737514433" duration="2609000" />
+      <workItem from="1719737514433" duration="4116000" />
+      <workItem from="1719804066826" duration="14685000" />
     </task>
     <servers />
   </component>
