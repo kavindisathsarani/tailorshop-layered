@@ -14,17 +14,25 @@ import java.util.List;
 
 public class CustomerDAOImpl implements CustomerDAO {
     @Override
-    public  List<Customer> getAll() throws SQLException {
+    public  ArrayList<Customer> getAll() throws SQLException, ClassNotFoundException {
+        ArrayList<Customer> allCustomers = new ArrayList<>();
 
-        return null;
+        ResultSet rst = SQLUtil.execute("SELECT * FROM customer");
+
+        while (rst.next()) {
+            Customer customer = new Customer(rst.getString("customerId"), rst.getString("name")
+                    ,rst.getString("gender"), rst.getString("address"),
+                    rst.getInt("contactNumber"),rst.getString("email"));
+
+            allCustomers.add(customer);
+        }
+        return allCustomers;
     }
 
     @Override
     public  boolean save(Customer entity) throws SQLException, ClassNotFoundException {
 
         // In here you can now save your customer
-
-
         return SQLUtil.execute("INSERT INTO customer(customerId,name,gender,address,contactNumber,email) VALUES(?,?,?,?,?,?)", entity.getCustomerId(),
                 entity.getName(),entity.getGender(), entity.getAddress(),entity.getContactNumber(),
                 entity.getEmail());
@@ -39,15 +47,16 @@ public class CustomerDAOImpl implements CustomerDAO {
     }
 
     @Override
-    public  Customer searchById(String customerId) throws SQLException {
+    public  Customer searchById(String customerId) throws SQLException, ClassNotFoundException {
 
-
-        return null;
+        ResultSet rst = SQLUtil.execute("SELECT * FROM customer WHERE customerId=?", customerId + "");
+        rst.next();
+        return new Customer(customerId + "", rst.getString("name"),rst.getString("gender"),
+                rst.getString("address"),rst.getInt("contactNumber"),rst.getString("email"));
     }
 
     @Override
-    public  boolean delete(String customerId) throws SQLException {
-
-        return false;
+    public  boolean delete(String customerId) throws SQLException, ClassNotFoundException {
+        return SQLUtil.execute("DELETE FROM customer WHERE customerId=?", customerId);
     }
 }

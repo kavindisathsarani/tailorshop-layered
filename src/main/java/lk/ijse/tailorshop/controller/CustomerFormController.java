@@ -1,5 +1,7 @@
 package lk.ijse.tailorshop.controller;
 import com.jfoenix.controls.JFXButton;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +10,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -25,7 +28,9 @@ import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -80,21 +85,92 @@ public class CustomerFormController {
 
     CustomerBO customerBO= (CustomerBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.CUSTOMER);
 
-    @FXML
-    void btnBackOnAction(ActionEvent event) {
 
+    private ArrayList<CustomerDTO> customerList = new ArrayList<>();
+
+    public void initialize() {
+        this.customerList = getAllCustomers();
+        setCellValueFactory();
+        loadCustomerTable();
+    }
+
+    private void loadCustomerTable() {
+        ObservableList<CustomerTm> tmList = FXCollections.observableArrayList();
+
+        for (CustomerDTO customer : customerList) {
+            CustomerTm customerTm = new CustomerTm(
+                    customer.getCustomerId(),
+                    customer.getName(),
+                    customer.getGender(),
+                    customer.getAddress(),
+                    customer.getContactNumber(),
+                    customer.getEmail()
+            );
+
+            tmList.add(customerTm);
+        }
+        tblCustomer.setItems(tmList);
+        CustomerTm selectedItem = tblCustomer.getSelectionModel().getSelectedItem();
+    }
+
+    private void setCellValueFactory() {
+        colId.setCellValueFactory(new PropertyValueFactory<>("customerId"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colGender.setCellValueFactory(new PropertyValueFactory<>("gender"));
+        colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
+        colContactNumber.setCellValueFactory(new PropertyValueFactory<>("contactNumber"));
+        colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+    }
+
+    private ArrayList<CustomerDTO> getAllCustomers() {
+        ArrayList<CustomerDTO> customerDTOS = null;
+        try {
+            customerDTOS = customerBO.getAllCustomers();
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return customerDTOS;
+    }
+
+    @FXML
+    void btnBackOnAction(ActionEvent event) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/dashboard_form.fxml"));
+        Stage stage = (Stage) root.getScene().getWindow();
+
+        stage.setScene(new Scene(anchorPane));
+        stage.setResizable(false);
+        stage.setTitle("Dashboard Form");
+        stage.centerOnScreen();
     }
 
     @FXML
     void btnClearOnAction(ActionEvent event) {
-
+        clearFields();
     }
 
-
+    private void clearFields() {
+        txtId.setText("");
+        txtName.setText("");
+        txtGender.setText("");
+        txtAddress.setText("");
+        txtContactNumber.setText(String.valueOf(""));
+        txtEmail.setText("");
+    }
 
     @FXML
-    void btnDeleteOnAction(ActionEvent event) {
+    void btnDeleteOnAction(ActionEvent event) throws ClassNotFoundException {
+        String customerId = txtId.getText();
 
+        try {
+            boolean isDeleted = customerBO.deleteCustomers(customerId);
+            if (isDeleted) {
+                new Alert(Alert.AlertType.CONFIRMATION, "customer deleted!").show();
+                initialize();
+
+            }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
     }
 
 
@@ -119,7 +195,7 @@ public class CustomerFormController {
                     boolean isSaved = customerBO.saveCustomers(new CustomerDTO(customerId, name, gender, address,contactNumber, email));
                     if (isSaved) {
                         new Alert(Alert.AlertType.CONFIRMATION, "customer saved!").show();
-                       // initialize();
+                       initialize();
                     }
                 } catch (SQLException e) {
                     new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
@@ -148,7 +224,7 @@ public class CustomerFormController {
                 boolean isUpdated = customerBO.updateCustomers(new CustomerDTO(customerId, name, gender, address,contactNumber, email));
                 if (isUpdated) {
                     new Alert(Alert.AlertType.CONFIRMATION, "customer updated!").show();
-                    //initialize();
+                    initialize();
 
                 }
             } catch (SQLException | ClassNotFoundException e) {
@@ -161,7 +237,23 @@ public class CustomerFormController {
 
 
     @FXML
-    void txtSearchOnAction(ActionEvent event) {
+    void txtSearchOnAction(ActionEvent event) throws ClassNotFoundException {
+        String customerId = txtId.getText();
+
+        try {
+            CustomerDTO customer = customerBO.searchByIdCustomers(customerId);
+
+            if (customer != null) {
+                txtId.setText(customer.getCustomerId());
+                txtName.setText(customer.getName());
+                txtGender.setText(customer.getGender());
+                txtAddress.setText(customer.getAddress());
+                txtContactNumber.setText(String.valueOf(customer.getContactNumber()));
+                txtEmail.setText(customer.getEmail());
+            }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
     }
 
     public void txtCustomerIdOnKeyReleased(KeyEvent keyEvent) {

@@ -8,6 +8,7 @@ import lk.ijse.tailorshop.entity.Customer;
 import lk.ijse.tailorshop.util.SQLUtil;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerBOImpl implements CustomerBO {
@@ -15,9 +16,16 @@ public class CustomerBOImpl implements CustomerBO {
     CustomerDAO customerDAO= (CustomerDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.CUSTOMER);
 
     @Override
-    public List<CustomerDTO> getAllCustomers() throws SQLException {
+    public ArrayList<CustomerDTO> getAllCustomers() throws SQLException, ClassNotFoundException {
+        ArrayList<CustomerDTO> allCustomers= new ArrayList<>();
 
-        return null;
+        ArrayList<Customer> all = customerDAO.getAll();
+
+        for (Customer c : all) {
+            allCustomers.add(new CustomerDTO(c.getCustomerId(),c.getName(),c.getGender(),c.getAddress(),
+                    c.getContactNumber(), c.getEmail()));
+        }
+        return allCustomers;
     }
 
     @Override
@@ -38,16 +46,14 @@ public class CustomerBOImpl implements CustomerBO {
     }
 
     @Override
-    public  Customer searchByIdCustomers(String customerId) throws SQLException {
-
-
-        return null;
+    public  CustomerDTO searchByIdCustomers(String customerId) throws SQLException, ClassNotFoundException {
+        Customer c = customerDAO.searchById(customerId);
+        return new CustomerDTO(c.getCustomerId(),c.getName(),c.getGender(),c.getAddress(),c.getContactNumber(),c.getEmail());
     }
 
     @Override
-    public  boolean deleteCustomers(String customerId) throws SQLException {
-
-        return false;
+    public  boolean deleteCustomers(String customerId) throws SQLException, ClassNotFoundException {
+        return customerDAO.delete(customerId);
     }
 
 }

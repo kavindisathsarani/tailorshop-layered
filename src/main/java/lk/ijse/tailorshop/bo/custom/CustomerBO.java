@@ -5,12 +5,13 @@ import lk.ijse.tailorshop.dto.CustomerDTO;
 import lk.ijse.tailorshop.entity.Customer;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public interface CustomerBO extends SuperBO {
 
 
-    public List<CustomerDTO> getAllCustomers() throws SQLException;
+    public ArrayList<CustomerDTO> getAllCustomers() throws SQLException, ClassNotFoundException;
 
 
     public  boolean saveCustomers(CustomerDTO dto) throws SQLException, ClassNotFoundException ;
@@ -18,8 +19,8 @@ public interface CustomerBO extends SuperBO {
 
     public  boolean updateCustomers(CustomerDTO dto) throws SQLException, ClassNotFoundException;
 
-    public Customer searchByIdCustomers(String customerId) throws SQLException ;
+    public CustomerDTO searchByIdCustomers(String customerId) throws SQLException, ClassNotFoundException;
 
 
-    public  boolean deleteCustomers(String customerId) throws SQLException ;
+    public  boolean deleteCustomers(String customerId) throws SQLException, ClassNotFoundException;
 }
