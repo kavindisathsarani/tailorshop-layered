@@ -3,6 +3,7 @@ package lk.ijse.tailorshop.dao;
 import lk.ijse.tailorshop.dao.custom.Impl.CustomerDAOImpl;
 import lk.ijse.tailorshop.dao.custom.Impl.EmployeeDAOImpl;
 import lk.ijse.tailorshop.dao.custom.Impl.MaterialDAOImpl;
+import lk.ijse.tailorshop.dao.custom.Impl.MeasurementDAOImpl;
 
 public class DAOFactory {
     private static DAOFactory daoFactory;
@@ -15,7 +16,7 @@ public class DAOFactory {
     }
 
     public enum DAOTypes {
-        CUSTOMER,EMPLOYEE,MATERIAL
+        CUSTOMER,EMPLOYEE,MATERIAL,MEASUREMENT
     }
 
     public SuperDAO getDAO(DAOTypes types){
@@ -26,6 +27,8 @@ public class DAOFactory {
                 return new EmployeeDAOImpl();
             case MATERIAL:
                 return new MaterialDAOImpl();
+            case MEASUREMENT:
+                return new MeasurementDAOImpl();
             default:
                 return null;
         }

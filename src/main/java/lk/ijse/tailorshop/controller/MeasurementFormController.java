@@ -11,6 +11,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.tailorshop.bo.BOFactory;
+import lk.ijse.tailorshop.bo.custom.MaterialBO;
+import lk.ijse.tailorshop.bo.custom.MeasurementBO;
 import lk.ijse.tailorshop.db.DbConnection;
 import lk.ijse.tailorshop.dto.MeasurementDTO;
 import lk.ijse.tailorshop.util.Regex;
@@ -128,13 +131,15 @@ public class MeasurementFormController {
     @FXML
     private TextField txtWrist;
 
+    MeasurementBO measurementBO= (MeasurementBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.MEASUREMENT);
+
     private List<MeasurementDTO> measurementList = new ArrayList<>();
 
-    public void initialize() {
-      /*  this.measurementList = getAllMeasurements();
+    public void initialize() throws ClassNotFoundException {
+        this.measurementList = getAllMeasurements();
         setCellValueFactory();
-        loadCustomerTable();
-        setDate();*/
+        loadMeasurementTable();
+        setDate();
 
     }
 
@@ -143,10 +148,10 @@ public class MeasurementFormController {
         lblDate.setText(String.valueOf(now));
     }
 
-    private void loadCustomerTable() {
-       /* ObservableList<MeasurementTm> tmList = FXCollections.observableArrayList();
+    private void loadMeasurementTable() {
+        ObservableList<MeasurementTm> tmList = FXCollections.observableArrayList();
 
-        for (Measurement measurement : measurementList) {
+        for (MeasurementDTO measurement : measurementList) {
             MeasurementTm measurementTm = new MeasurementTm(
                     measurement.getMeasurementId(),
                     measurement.getNeckSize(),
@@ -168,7 +173,7 @@ public class MeasurementFormController {
             tmList.add(measurementTm);
         }
         tblMeasurement.setItems(tmList);
-        MeasurementTm selectedItem = tblMeasurement.getSelectionModel().getSelectedItem();*/
+        MeasurementTm selectedItem = tblMeasurement.getSelectionModel().getSelectedItem();
     }
 
     private void setCellValueFactory() {
@@ -189,14 +194,15 @@ public class MeasurementFormController {
         colCustomerId.setCellValueFactory(new PropertyValueFactory<>("customerId"));
     }
 
-    private List<Measurement> getAllMeasurements() {
-     /*   List<Measurement> measurementList = null;
+    private ArrayList<MeasurementDTO> getAllMeasurements() throws ClassNotFoundException {
+        ArrayList<MeasurementDTO> measurementDTOS = null;
         try {
-            measurementList = MeasurementRepo.getAll();
+            measurementDTOS = measurementBO.getAllMeasurements();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return measurementList;*/
+        return measurementDTOS;
+
     }
 
     @FXML
@@ -234,11 +240,11 @@ public class MeasurementFormController {
     }
 
     @FXML
-    void btnDeleteOnAction(ActionEvent event) {
-      /*  String customerId = txtCustomerId.getText();
+    void btnDeleteOnAction(ActionEvent event) throws ClassNotFoundException {
+        String customerId = txtCustomerId.getText();
 
         try {
-            boolean isDeleted = MeasurementRepo.delete(customerId);
+            boolean isDeleted = measurementBO.deleteMeasurements(customerId);
             if (isDeleted) {
                 new Alert(Alert.AlertType.CONFIRMATION, "measurement deleted!").show();
                 initialize();
@@ -246,7 +252,7 @@ public class MeasurementFormController {
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
-        }*/
+        }
     }
 
     @FXML
@@ -260,9 +266,9 @@ public class MeasurementFormController {
     }
 
     @FXML
-    void btnSaveOnAction(ActionEvent event) {
+    void btnSaveOnAction(ActionEvent event) throws ClassNotFoundException {
 
-       /* if(txtMeasurementId.getText().isEmpty() || txtCustomerId.getText().isEmpty()|| txtEmployeeId.getText().isEmpty()) {
+        if(txtMeasurementId.getText().isEmpty() || txtCustomerId.getText().isEmpty()|| txtEmployeeId.getText().isEmpty()) {
             new Alert(Alert.AlertType.ERROR, "Please fill in  empty fields before adding a new measurement!").show();
 
         }else {
@@ -283,11 +289,12 @@ public class MeasurementFormController {
             String employeeId = txtEmployeeId.getText();
             String customerId = txtCustomerId.getText();
 
-            Measurement measurement = new Measurement(measurementId, neckSize, armhole, sleeveLength, wrist, chest, torsoLength, waist, hip, crotchLength, shoulderLength, thighCircumference, waistToHem, employeeId, customerId);
 
             if(isValid()) {
                 try {
-                    boolean isSaved = MeasurementRepo.save(measurement);
+                    boolean isSaved = measurementBO.saveMeasurements(new MeasurementDTO(measurementId,neckSize,armhole,
+                            sleeveLength,wrist,chest,torsoLength,waist,hip,crotchLength,shoulderLength,
+                            thighCircumference,waistToHem,employeeId,customerId));
                     if (isSaved) {
                         new Alert(Alert.AlertType.CONFIRMATION, "measurement saved!").show();
                         initialize();
@@ -299,7 +306,7 @@ public class MeasurementFormController {
             }else {
                 new Alert(Alert.AlertType.ERROR, "Oops! It seems there are errors in the fields you filled. Please review and correct the information accordingly!").show();
             }
-        }*/
+        }
     }
 
     public boolean isValid(){
@@ -322,48 +329,68 @@ public class MeasurementFormController {
     }
 
     @FXML
-    void btnUpdateOnAction(ActionEvent event) {
-      /*  String measurementId=txtMeasurementId.getText();
-        double neckSize=Double.parseDouble(txtNeck.getText());
-        double armhole=Double.parseDouble(txtArm.getText());
-        double sleeveLength=Double.parseDouble(txtSleeve.getText());
-        double wrist=Double.parseDouble(txtWrist.getText());
-        double chest=Double.parseDouble(txtChest.getText());
-        double torsoLength=Double.parseDouble(txtTorso.getText());
-        double waist=Double.parseDouble(txtWaist.getText());
-        double hip=Double.parseDouble(txtHip.getText());
-        double crotchLength=Double.parseDouble(txtCrotch.getText());
-        double shoulderLength=Double.parseDouble(txtShoulder.getText());
-        double thighCircumference=Double.parseDouble(txtThigh.getText());
-        double waistToHem=Double.parseDouble(txtWaistToHem.getText());
-        String employeeId=txtEmployeeId.getText();
-        String customerId=txtCustomerId.getText();
+    void btnUpdateOnAction(ActionEvent event) throws ClassNotFoundException {
+        String measurementId = txtMeasurementId.getText();
+        String neckSizeText = txtNeck.getText();
+        String armholeText = txtArm.getText();
+        String sleeveLengthText = txtSleeve.getText();
+        String wristText = txtWrist.getText();
+        String chestText = txtChest.getText();
+        String torsoLengthText = txtTorso.getText();
+        String waistText = txtWaist.getText();
+        String hipText = txtHip.getText();
+        String crotchLengthText = txtCrotch.getText();
+        String shoulderLengthText = txtShoulder.getText();
+        String thighCircumferenceText = txtThigh.getText();
+        String waistToHemText = txtWaistToHem.getText();
+        String employeeId = txtEmployeeId.getText();
+        String customerId = txtCustomerId.getText();
 
-        Measurement measurement = new Measurement(measurementId, neckSize, armhole, sleeveLength,wrist,chest,torsoLength,waist,hip,crotchLength,shoulderLength,thighCircumference,waistToHem,employeeId,customerId);
+        if (measurementId.isEmpty() || neckSizeText.isEmpty() || armholeText.isEmpty() || sleeveLengthText.isEmpty() ||
+                wristText.isEmpty() || chestText.isEmpty() || torsoLengthText.isEmpty() || waistText.isEmpty() ||
+                hipText.isEmpty() || crotchLengthText.isEmpty() || shoulderLengthText.isEmpty() || thighCircumferenceText.isEmpty() ||
+                waistToHemText.isEmpty() || employeeId.isEmpty() || customerId.isEmpty()) {
 
-        if(isValid()) {
+            new Alert(Alert.AlertType.ERROR, "All fields must be filled.").show();
+            return;
+        }
+
+        double neckSize = Double.parseDouble(neckSizeText);
+        double armhole = Double.parseDouble(armholeText);
+        double sleeveLength = Double.parseDouble(sleeveLengthText);
+        double wrist = Double.parseDouble(wristText);
+        double chest = Double.parseDouble(chestText);
+        double torsoLength = Double.parseDouble(torsoLengthText);
+        double waist = Double.parseDouble(waistText);
+        double hip = Double.parseDouble(hipText);
+        double crotchLength = Double.parseDouble(crotchLengthText);
+        double shoulderLength = Double.parseDouble(shoulderLengthText);
+        double thighCircumference = Double.parseDouble(thighCircumferenceText);
+        double waistToHem = Double.parseDouble(waistToHemText);
+
+        if (isValid()) {
             try {
-                boolean isUpdated = MeasurementRepo.update(measurement);
+                boolean isUpdated = measurementBO.updateMeasurements(new MeasurementDTO(measurementId, neckSize, armhole,
+                        sleeveLength, wrist, chest, torsoLength, waist, hip, crotchLength, shoulderLength,
+                        thighCircumference, waistToHem, employeeId, customerId));
                 if (isUpdated) {
-                    new Alert(Alert.AlertType.CONFIRMATION, "measurement updated!").show();
+                    new Alert(Alert.AlertType.CONFIRMATION, "Measurement updated!").show();
                     initialize();
-
                 }
             } catch (SQLException e) {
                 new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
-        }else {
+        } else {
             new Alert(Alert.AlertType.ERROR, "Oops! It seems there are errors in the fields you filled. Please review and correct the information accordingly!").show();
-
-        }*/
+        }
     }
 
     @FXML
-    void txtSearchOnAction(ActionEvent event) {
-     /*   String customerId = txtCustomerId.getText();
+    void txtSearchOnAction(ActionEvent event) throws ClassNotFoundException {
+        String customerId = txtCustomerId.getText();
 
         try {
-            Measurement measurement = MeasurementRepo.searchById(customerId);
+            MeasurementDTO measurement = measurementBO.searchByIdMeasurements(customerId);
 
             if (measurement != null) {
                 txtCustomerId.setText(measurement.getCustomerId());
@@ -385,7 +412,7 @@ public class MeasurementFormController {
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
-        }*/
+        }
     }
 
     public void txtMeasurementIdOnKeyReleased(KeyEvent keyEvent) {
