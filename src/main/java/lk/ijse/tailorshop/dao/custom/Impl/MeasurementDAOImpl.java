@@ -1,7 +1,7 @@
 package lk.ijse.tailorshop.dao.custom.Impl;
 
 import lk.ijse.tailorshop.dao.custom.MeasurementDAO;
-import lk.ijse.tailorshop.entity.Material;
+import lk.ijse.tailorshop.entity.MaterialDetail;
 import lk.ijse.tailorshop.entity.Measurement;
 import lk.ijse.tailorshop.util.SQLUtil;
 
@@ -82,5 +82,25 @@ public class MeasurementDAOImpl implements MeasurementDAO {
         //DELETE FROM measurement WHERE customerId = ?
         return SQLUtil.execute("DELETE FROM measurement WHERE customerId = ?", customerId);
 
+    }
+
+    @Override
+    public ArrayList<String> currentId() throws SQLException {
+        return null;
+    }
+
+    @Override
+    public ArrayList<String> getIds() throws SQLException, ClassNotFoundException {
+        return null;
+    }
+
+    @Override
+    public boolean updateQty(ArrayList<MaterialDetail> mdList) {
+        return false;
+    }
+
+    @Override
+    public boolean save(ArrayList<MaterialDetail> mdList) {
+        return false;
     }
 }

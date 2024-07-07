@@ -1,9 +1,6 @@
 package lk.ijse.tailorshop.bo;
 
-import lk.ijse.tailorshop.bo.custom.Impl.CustomerBOImpl;
-import lk.ijse.tailorshop.bo.custom.Impl.EmployeeBOImpl;
-import lk.ijse.tailorshop.bo.custom.Impl.MaterialBOImpl;
-import lk.ijse.tailorshop.bo.custom.Impl.MeasurementBOImpl;
+import lk.ijse.tailorshop.bo.custom.Impl.*;
 
 public class BOFactory {
     private static BOFactory boFactory;
@@ -15,7 +12,7 @@ public class BOFactory {
 
 
     public enum BOTypes{
-        CUSTOMER,EMPLOYEE,MATERIAL,MEASUREMENT
+        CUSTOMER,EMPLOYEE,MATERIAL,MEASUREMENT,ADDGARMENT
     }
 
     //Object creation logic for BO objects
@@ -29,6 +26,8 @@ public class BOFactory {
                 return new MaterialBOImpl();
             case MEASUREMENT:
                 return new MeasurementBOImpl();
+            case ADDGARMENT:
+                return new AddGarmentBOImpl();
             default:
                 return null;
         }

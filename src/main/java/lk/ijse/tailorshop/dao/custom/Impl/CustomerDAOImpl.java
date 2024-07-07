@@ -1,16 +1,13 @@
 package lk.ijse.tailorshop.dao.custom.Impl;
 
 import lk.ijse.tailorshop.dao.custom.CustomerDAO;
-import lk.ijse.tailorshop.db.DbConnection;
 import lk.ijse.tailorshop.entity.Customer;
+import lk.ijse.tailorshop.entity.MaterialDetail;
 import lk.ijse.tailorshop.util.SQLUtil;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class CustomerDAOImpl implements CustomerDAO {
     @Override
@@ -58,5 +55,25 @@ public class CustomerDAOImpl implements CustomerDAO {
     @Override
     public  boolean delete(String customerId) throws SQLException, ClassNotFoundException {
         return SQLUtil.execute("DELETE FROM customer WHERE customerId=?", customerId);
+    }
+
+    @Override
+    public ArrayList<String> currentId() throws SQLException {
+        return null;
+    }
+
+    @Override
+    public ArrayList<String> getIds() throws SQLException, ClassNotFoundException {
+        return null;
+    }
+
+    @Override
+    public boolean updateQty(ArrayList<MaterialDetail> mdList) {
+        return false;
+    }
+
+    @Override
+    public boolean save(ArrayList<MaterialDetail> mdList) {
+        return false;
     }
 }

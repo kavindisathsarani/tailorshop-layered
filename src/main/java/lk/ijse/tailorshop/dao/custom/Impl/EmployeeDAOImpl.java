@@ -1,8 +1,8 @@
 package lk.ijse.tailorshop.dao.custom.Impl;
 
 import lk.ijse.tailorshop.dao.custom.EmployeeDAO;
-import lk.ijse.tailorshop.entity.Customer;
 import lk.ijse.tailorshop.entity.Employee;
+import lk.ijse.tailorshop.entity.MaterialDetail;
 import lk.ijse.tailorshop.util.SQLUtil;
 
 import java.sql.ResultSet;
@@ -51,5 +51,25 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     @Override
     public boolean delete(String employeeId) throws SQLException, ClassNotFoundException {
         return SQLUtil.execute("DELETE FROM employee WHERE employeeId=?", employeeId);
+    }
+
+    @Override
+    public ArrayList<String> currentId() throws SQLException {
+        return null;
+    }
+
+    @Override
+    public ArrayList<String> getIds() throws SQLException, ClassNotFoundException {
+        return null;
+    }
+
+    @Override
+    public boolean updateQty(ArrayList<MaterialDetail> mdList) {
+        return false;
+    }
+
+    @Override
+    public boolean save(ArrayList<MaterialDetail> mdList) {
+        return false;
     }
 }
