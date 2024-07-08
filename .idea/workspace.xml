@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd485318-7def-4c0f-9aad-7f4c40ab2422" name="Changes" comment="orderController initiate">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="bd485318-7def-4c0f-9aad-7f4c40ab2422" name="Changes" comment="initial commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -103,13 +101,6 @@
       <workItem from="1720409121216" duration="1057000" />
       <workItem from="1720410660996" duration="1880000" />
       <workItem from="1720413502534" duration="450000" />
-      <workItem from="1720413992023" duration="429000" />
-      <workItem from="1720414573854" duration="186000" />
-      <workItem from="1720415774675" duration="3000" />
-      <workItem from="1720415830502" duration="49000" />
-      <workItem from="1720415919691" duration="560000" />
-      <workItem from="1720417125057" duration="25000" />
-      <workItem from="1720417197492" duration="405000" />
     </task>
     <task id="LOCAL-00001" summary="customer save and update method done">
       <option name="closed" value="true" />
@@ -183,15 +174,7 @@
       <option name="project" value="LOCAL" />
       <updated>1720413908260</updated>
     </task>
-    <task id="LOCAL-00010" summary="orderController initiate">
-      <option name="closed" value="true" />
-      <created>1720414374864</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1720414374864</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,7 +188,6 @@
     <MESSAGE value="measurementController Done" />
     <MESSAGE value="garmentControllerclass done(transaction)" />
     <MESSAGE value="initial commit" />
-    <MESSAGE value="orderController initiate" />
-    <option name="LAST_COMMIT_MESSAGE" value="orderController initiate" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
   </component>
 </project>
