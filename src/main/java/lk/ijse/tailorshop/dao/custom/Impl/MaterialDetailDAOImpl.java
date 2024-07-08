@@ -65,7 +65,7 @@ public class MaterialDetailDAOImpl implements MaterialDetailDAO {
         // Replace SQLUtil.execute() with your actual method to execute SQL statements
         return SQLUtil.execute(sql, md.getQty(), md.getMaterialId());
     }
-
+//
     @Override
     public boolean save(ArrayList<MaterialDetail> mdList) throws SQLException, ClassNotFoundException {
         for (MaterialDetail md : mdList) {
