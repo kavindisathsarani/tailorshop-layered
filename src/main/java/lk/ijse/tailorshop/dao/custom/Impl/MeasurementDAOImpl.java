@@ -93,7 +93,6 @@ public class MeasurementDAOImpl implements MeasurementDAO {
     public ArrayList<String> getIds() throws SQLException, ClassNotFoundException {
         return null;
     }
-
     @Override
     public boolean updateQty(ArrayList<Measurement> mdList) throws SQLException, ClassNotFoundException {
         return false;
