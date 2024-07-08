@@ -76,4 +76,11 @@ public class CustomerDAOImpl implements CustomerDAO {
     public boolean save(ArrayList<MaterialDetail> mdList) {
         return false;
     }
+
+    @Override
+    public int getCount() throws SQLException, ClassNotFoundException {
+        ResultSet rst = SQLUtil.execute("SELECT COUNT(*) AS customer_count FROM customer");
+        rst.next();
+        return rst.getInt("customer_count");
+    }
 }

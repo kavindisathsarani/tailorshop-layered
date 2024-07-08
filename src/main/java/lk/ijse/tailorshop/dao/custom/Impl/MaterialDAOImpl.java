@@ -92,4 +92,9 @@ public class MaterialDAOImpl implements MaterialDAO {
         return false;
     }
 
+    @Override
+    public int getCount() {
+        return 0;
+    }
+
 }

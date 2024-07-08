@@ -72,4 +72,9 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     public boolean save(ArrayList<MaterialDetail> mdList) {
         return false;
     }
+
+    @Override
+    public int getCount() {
+        return 0;
+    }
 }

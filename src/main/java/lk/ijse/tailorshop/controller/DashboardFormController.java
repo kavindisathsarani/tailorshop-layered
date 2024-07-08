@@ -7,6 +7,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.tailorshop.bo.BOFactory;
+import lk.ijse.tailorshop.bo.custom.AddGarmentBO;
+import lk.ijse.tailorshop.bo.custom.CustomerBO;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -25,17 +28,16 @@ public class DashboardFormController {
 
     private int garmentCount;
 
+    CustomerBO customerBO= (CustomerBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.CUSTOMER);
+    AddGarmentBO addGarmentBO= (AddGarmentBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.ADDGARMENT);
 
-   /* public void initialize() {
-        try {
-            customerCount = DashboardRepo.getCustomerCount();
-            garmentCount=DashboardRepo.getGarmentCount();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+
+    public void initialize() throws SQLException, ClassNotFoundException {
+        customerCount = customerBO.getCustomerCount();
+        garmentCount=addGarmentBO.getGarmentCount();
         setCustomerCount(customerCount);
         setGarmentCount(garmentCount);
-    }*/
+    }
 
     private void setGarmentCount(int garmentCount) {
         lblGarmentCount.setText(String.valueOf(garmentCount));

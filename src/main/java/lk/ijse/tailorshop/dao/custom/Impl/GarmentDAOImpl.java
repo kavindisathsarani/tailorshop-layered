@@ -37,6 +37,13 @@ public class GarmentDAOImpl implements GarmentDAO {
     }
 
     @Override
+    public int getCount() throws SQLException, ClassNotFoundException {
+        ResultSet rst = SQLUtil.execute("SELECT COUNT(*) AS garment_count FROM garment");
+        rst.next();
+        return rst.getInt("garment_count");
+    }
+
+    @Override
     public ArrayList<Garment> getAll() throws SQLException, ClassNotFoundException {
         return null;
     }

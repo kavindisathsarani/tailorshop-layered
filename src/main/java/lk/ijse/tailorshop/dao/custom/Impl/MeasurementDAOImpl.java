@@ -103,4 +103,9 @@ public class MeasurementDAOImpl implements MeasurementDAO {
     public boolean save(ArrayList<MaterialDetail> mdList) {
         return false;
     }
+
+    @Override
+    public int getCount() {
+        return 0;
+    }
 }

@@ -22,6 +22,8 @@ public interface CrudDAO<T> extends SuperDAO {
 
     boolean save(ArrayList<MaterialDetail> mdList) throws SQLException, ClassNotFoundException;
 
+    int getCount() throws SQLException, ClassNotFoundException;
+
     //ArrayList<String> getIds() throws SQLException, ClassNotFoundException;
 
     // boolean save(String customerId, String name, String gender, String address, int contactNumber, String email);

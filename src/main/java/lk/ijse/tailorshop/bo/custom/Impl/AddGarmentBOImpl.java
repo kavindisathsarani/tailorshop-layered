@@ -62,6 +62,11 @@ public class AddGarmentBOImpl implements AddGarmentBO {
         }
     }
 
+    @Override
+    public int getGarmentCount() throws SQLException, ClassNotFoundException {
+            return garmentDAO.getCount();
     }
+
+}
 
 

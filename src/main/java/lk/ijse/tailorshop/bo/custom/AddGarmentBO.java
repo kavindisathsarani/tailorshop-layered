@@ -19,4 +19,5 @@ public interface AddGarmentBO extends SuperBO {
 
     public  boolean addGarment(AddGarment ad) throws SQLException ;
 
+    int getGarmentCount() throws SQLException, ClassNotFoundException;
 }

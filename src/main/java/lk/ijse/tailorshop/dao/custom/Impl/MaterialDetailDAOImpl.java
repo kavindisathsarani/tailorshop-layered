@@ -63,4 +63,9 @@ public class MaterialDetailDAOImpl implements MaterialDetailDAO {
         }
         return true;
     }
+
+    @Override
+    public int getCount() {
+        return 0;
+    }
 }
