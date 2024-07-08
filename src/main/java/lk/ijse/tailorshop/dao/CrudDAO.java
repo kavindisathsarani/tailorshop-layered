@@ -1,9 +1,11 @@
 package lk.ijse.tailorshop.dao;
 
 import lk.ijse.tailorshop.entity.MaterialDetail;
+import lk.ijse.tailorshop.entity.OrderDetail;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public interface CrudDAO<T> extends SuperDAO {
     public ArrayList<T> getAll() throws SQLException, ClassNotFoundException;
@@ -23,6 +25,9 @@ public interface CrudDAO<T> extends SuperDAO {
     boolean save(ArrayList<T> mdList) throws SQLException, ClassNotFoundException;
 
     int getCount() throws SQLException, ClassNotFoundException;
+
+
+
 
     //ArrayList<String> getIds() throws SQLException, ClassNotFoundException;
 

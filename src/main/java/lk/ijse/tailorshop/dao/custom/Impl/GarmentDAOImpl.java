@@ -2,6 +2,7 @@ package lk.ijse.tailorshop.dao.custom.Impl;
 
 import lk.ijse.tailorshop.dao.custom.GarmentDAO;
 import lk.ijse.tailorshop.entity.Garment;
+import lk.ijse.tailorshop.entity.Material;
 import lk.ijse.tailorshop.entity.MaterialDetail;
 import lk.ijse.tailorshop.util.SQLUtil;
 
@@ -23,7 +24,12 @@ public class GarmentDAOImpl implements GarmentDAO {
     @Override
     public ArrayList<String> getIds() throws SQLException, ClassNotFoundException {
 
-        return null;
+        ArrayList<String> codeList = new ArrayList<>();
+        ResultSet resultSet = SQLUtil.execute("SELECT garmentId FROM garment");
+        while (resultSet.next()) {
+            codeList.add(resultSet.getString(1));
+        }
+        return codeList;
     }
 
     @Override
@@ -64,8 +70,14 @@ public class GarmentDAOImpl implements GarmentDAO {
     }
 
     @Override
-    public Garment searchById(String id) throws SQLException, ClassNotFoundException {
-        return null;
+    public Garment searchById(String garmentId) throws SQLException, ClassNotFoundException {
+        ResultSet rst = SQLUtil.execute("SELECT * FROM garment WHERE garmentId = ?", garmentId + "");
+        rst.next();
+        return new Garment(garmentId + "",rst.getString("name"), rst.getString("description"),
+                rst.getString("category"),rst.getString("size"),
+                rst.getDouble("qtyOnHand"),rst.getDouble("materialCost"),
+                rst.getDouble("towage"),rst.getDouble("totalPrice"));
+
     }
 
     @Override
