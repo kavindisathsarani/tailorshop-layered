@@ -2,6 +2,7 @@ package lk.ijse.tailorshop.bo.custom;
 
 import lk.ijse.tailorshop.bo.SuperBO;
 import lk.ijse.tailorshop.db.DbConnection;
+import lk.ijse.tailorshop.dto.PlaceOrderDTO;
 import lk.ijse.tailorshop.entity.Garment;
 import lk.ijse.tailorshop.entity.PlaceOrder;
 
@@ -16,5 +17,5 @@ public interface PlaceOrderBO extends SuperBO {
 
     Garment searchByCodeGarments(String garmentId) throws SQLException, ClassNotFoundException;
 
-    public  boolean placeOrder(PlaceOrder po) throws SQLException ;
+    public  boolean placeOrder(PlaceOrderDTO po) throws SQLException ;
 }

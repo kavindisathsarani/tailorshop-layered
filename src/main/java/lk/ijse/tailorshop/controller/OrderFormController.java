@@ -18,6 +18,7 @@ import lk.ijse.tailorshop.bo.BOFactory;
 import lk.ijse.tailorshop.bo.custom.AddGarmentBO;
 import lk.ijse.tailorshop.bo.custom.PlaceOrderBO;
 import lk.ijse.tailorshop.db.DbConnection;
+import lk.ijse.tailorshop.dto.PlaceOrderDTO;
 import lk.ijse.tailorshop.entity.Garment;
 import lk.ijse.tailorshop.entity.Order;
 import lk.ijse.tailorshop.entity.OrderDetail;
@@ -339,7 +340,7 @@ public class OrderFormController {
                 odList.add(gd);
             }
 
-            PlaceOrder po = new PlaceOrder(order, odList);
+            PlaceOrderDTO po = new PlaceOrderDTO(order, odList);
 
             if(isValid()) {
                 try {

@@ -17,6 +17,7 @@ import lk.ijse.tailorshop.bo.BOFactory;
 import lk.ijse.tailorshop.bo.custom.AddGarmentBO;
 import lk.ijse.tailorshop.bo.custom.MaterialBO;
 import lk.ijse.tailorshop.db.DbConnection;
+import lk.ijse.tailorshop.dto.AddGarmentDTO;
 import lk.ijse.tailorshop.dto.MaterialDTO;
 import lk.ijse.tailorshop.entity.AddGarment;
 import lk.ijse.tailorshop.entity.Garment;
@@ -229,7 +230,7 @@ public class GarmentFormController {
                 mdList.add(md);
             }
 
-            AddGarment ad = new AddGarment(garment, mdList);
+            AddGarmentDTO ad = new AddGarmentDTO(garment, mdList);
 
             if(isValid()) {
                 try {

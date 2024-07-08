@@ -6,6 +6,7 @@ import lk.ijse.tailorshop.dao.custom.GarmentDAO;
 import lk.ijse.tailorshop.dao.custom.OrderDAO;
 import lk.ijse.tailorshop.dao.custom.OrderDetailDAO;
 import lk.ijse.tailorshop.db.DbConnection;
+import lk.ijse.tailorshop.dto.PlaceOrderDTO;
 import lk.ijse.tailorshop.entity.Garment;
 import lk.ijse.tailorshop.entity.PlaceOrder;
 
@@ -38,7 +39,7 @@ public class PlaceOrderBOImpl implements PlaceOrderBO {
 
     }
 
-    public boolean placeOrder(PlaceOrder po) throws SQLException {
+    public boolean placeOrder(PlaceOrderDTO po) throws SQLException {
         Connection connection = DbConnection.getDbConnection().getConnection();
         connection.setAutoCommit(false);
 
