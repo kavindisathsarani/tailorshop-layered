@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd485318-7def-4c0f-9aad-7f4c40ab2422" name="Changes" comment="initial commit" />
+    <list default="true" id="bd485318-7def-4c0f-9aad-7f4c40ab2422" name="Changes" comment="order transaction dto,tm,entity done" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -174,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720413908260</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="order transaction dto,tm,entity done">
+      <option name="closed" value="true" />
+      <created>1720417898208</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1720417898208</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +196,7 @@
     <MESSAGE value="measurementController Done" />
     <MESSAGE value="garmentControllerclass done(transaction)" />
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="order transaction dto,tm,entity done" />
+    <option name="LAST_COMMIT_MESSAGE" value="order transaction dto,tm,entity done" />
   </component>
 </project>
