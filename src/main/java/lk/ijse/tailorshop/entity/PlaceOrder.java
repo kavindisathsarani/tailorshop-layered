@@ -11,6 +11,7 @@ import java.util.List;
 @Data
 
 public class PlaceOrder {
+    //
     private Order order;
     private List<OrderDetail> odList;
 }
