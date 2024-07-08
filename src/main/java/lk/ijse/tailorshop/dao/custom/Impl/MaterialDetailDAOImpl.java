@@ -50,8 +50,20 @@ public class MaterialDetailDAOImpl implements MaterialDetailDAO {
     }
 
     @Override
-    public boolean updateQty(ArrayList<MaterialDetail> mdList) {
-        return false;
+    public boolean updateQty(ArrayList<MaterialDetail> mdList) throws SQLException, ClassNotFoundException {
+        for (MaterialDetail md : mdList) {
+            if(!updateQty(md)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean updateQty(MaterialDetail md) throws SQLException, ClassNotFoundException {
+        String sql = "UPDATE material SET qty = qty - ? WHERE materialId = ?";
+        // Execute update statement with parameters
+        // Replace SQLUtil.execute() with your actual method to execute SQL statements
+        return SQLUtil.execute(sql, md.getQty(), md.getMaterialId());
     }
 
     @Override

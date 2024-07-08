@@ -95,14 +95,15 @@ public class MeasurementDAOImpl implements MeasurementDAO {
     }
 
     @Override
-    public boolean updateQty(ArrayList<MaterialDetail> mdList) {
+    public boolean updateQty(ArrayList<Measurement> mdList) throws SQLException, ClassNotFoundException {
         return false;
     }
 
     @Override
-    public boolean save(ArrayList<MaterialDetail> mdList) {
+    public boolean save(ArrayList<Measurement> mdList) throws SQLException, ClassNotFoundException {
         return false;
     }
+
 
     @Override
     public int getCount() {

@@ -27,14 +27,16 @@ public class GarmentDAOImpl implements GarmentDAO {
     }
 
     @Override
-    public boolean updateQty(ArrayList<MaterialDetail> mdList) {
+    public boolean updateQty(ArrayList<Garment> mdList) throws SQLException, ClassNotFoundException {
         return false;
     }
 
     @Override
-    public boolean save(ArrayList<MaterialDetail> mdList) {
+    public boolean save(ArrayList<Garment> mdList) throws SQLException, ClassNotFoundException {
         return false;
     }
+
+
 
     @Override
     public int getCount() throws SQLException, ClassNotFoundException {

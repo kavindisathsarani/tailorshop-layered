@@ -45,7 +45,7 @@ public class AddGarmentBOImpl implements AddGarmentBO {
             if (isOrderSaved) {
                 boolean isOrderDetailSaved = materialDetailDAO.save(ad.getMdList());
                 if (isOrderDetailSaved) {
-                    boolean isItemQtyUpdate = materialDAO.updateQty(ad.getMdList());
+                    boolean isItemQtyUpdate = materialDetailDAO.updateQty(ad.getMdList());
                     if (isItemQtyUpdate) {
                         connection.commit();
                         return true;

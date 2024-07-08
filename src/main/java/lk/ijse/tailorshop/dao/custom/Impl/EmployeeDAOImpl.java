@@ -64,14 +64,15 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override
-    public boolean updateQty(ArrayList<MaterialDetail> mdList) {
+    public boolean updateQty(ArrayList<Employee> mdList) throws SQLException, ClassNotFoundException {
         return false;
     }
 
     @Override
-    public boolean save(ArrayList<MaterialDetail> mdList) {
+    public boolean save(ArrayList<Employee> mdList) throws SQLException, ClassNotFoundException {
         return false;
     }
+
 
     @Override
     public int getCount() {
