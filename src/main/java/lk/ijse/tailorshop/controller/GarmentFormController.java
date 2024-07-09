@@ -122,6 +122,7 @@ public class GarmentFormController {
 
 
     public void initialize() throws ClassNotFoundException {
+        //
         setCellValueFactory();
         loadNextGarmentId();
         getMaterialId();
