@@ -1,4 +1,4 @@
-# TailerMater TailorShop Layered
+# TailorMate TailorShop Layered
 
 **TailorShop Layered** is an academic Java application developed using the **Layered Architecture** design pattern, with the user interface created via **JavaFX Scene Builder** for a clean separation of design and logic.
 
